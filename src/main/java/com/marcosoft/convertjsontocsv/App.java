@@ -12,7 +12,7 @@ public class App {
 
     public static void main(String[] args) throws FileNotFoundException {
 
-        String file ="/Users/marcosstrapazon/Downloads/Sicredi/previa_massificados.json";
+        String file ="/Users/marcosstrapazon/Documents/Sicredi/previa_massificados.json";
 
         BufferedReader reader = new BufferedReader(new FileReader(file));
         try {
@@ -51,7 +51,7 @@ public class App {
         FileWriter filewriter = null;
 
         try {
-            file = new File("/Users/marcosstrapazon/Downloads/Sicredi/previa_massificados.csv");
+            file = new File("/Users/marcosstrapazon/Documents/Sicredi/previa_massificados.csv");
             filewriter = new FileWriter(file);
             filewriter.write(fileContent.toString());
             filewriter.close();
@@ -59,14 +59,15 @@ public class App {
         }
 
         catch (Exception e) {
-            e.printStackTrace();
+            System.out.println(e.getMessage());
+
         } finally {
             try {
                 if (filewriter != null) {
                     filewriter.close();
                 }
             } catch (Exception e) {
-                e.printStackTrace();
+                System.out.println(e.getMessage());
             }
         }
 
